@@ -1,3 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 160%;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+html {
+  background: linear-gradient(#dcbcd3, #5598c8);
+  background-attachment: fixed;
+  height: 100vh;
+}
+
 html,
 body {
   padding: 0;
@@ -11,6 +31,12 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+.cover-image {
+  width: 8rem;
+}
+
+@media (min-width: 640px) {
+  .cover-image {
+    width: 10rem;
+  }
 }
