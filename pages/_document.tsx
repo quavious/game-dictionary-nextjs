@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/next-script-for-ga */
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class AppDocument extends Document {
@@ -31,6 +32,25 @@ class AppDocument extends Document {
             href="/favicon-16x16.png"
           />
           <link rel="manifest" href="/site.webmanifest" />
+          {/* Global site tag (gtag.js) - Google Analytics */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '${process.env.NEXT_PUBLIC_GA}');`,
+            }}
+          />
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE}`}
+            crossOrigin="anonymous"
+          ></script>
         </Head>
         <body>
           <Main />
