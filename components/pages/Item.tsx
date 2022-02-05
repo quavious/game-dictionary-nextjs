@@ -75,16 +75,16 @@ const GameItemView = ({ game }: { game: GameItemProp }) => {
                     {video.name}
                   </h3>
                 </div>
-                <iframe
-                  // className="max-w-xl w-full h-96"
-                  width={16 * 45}
-                  height={9 * 45}
-                  src={`https://www.youtube-nocookie.com/embed/${video.video_id}`}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                <div className="w-96 h-80">
+                  <iframe
+                    className="w-full h-full"
+                    src={`https://www.youtube-nocookie.com/embed/${video.video_id}`}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
               </div>
             ))}
         </div>
