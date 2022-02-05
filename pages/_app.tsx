@@ -10,7 +10,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      console.log(url);
+      if (process.env.NODE_ENV === 'development') {
+        console.log(url);
+      }
       ga.pageView(url);
     };
     router.events.on('routeChangeComplete', handleRouteChange);
