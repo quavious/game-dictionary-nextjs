@@ -40,3 +40,13 @@ a {
     width: 10rem;
   }
 }
+
+html::-webkit-scrollbar {
+  width: 16px;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: #222630;
+}
+html::-webkit-scrollbar-track {
+  background-color: grey;
+}
