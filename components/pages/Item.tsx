@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import gameStyle from '../../styles/Game.module.css';
 import { GameItemProp } from '../../types/game';
 
 const GameItemView = ({ game }: { game: GameItemProp }) => {
@@ -55,7 +55,9 @@ const GameItemView = ({ game }: { game: GameItemProp }) => {
           </i>
         )}
         <h2 className="mt-4 mb-2 font-bold text-xl">Artworks</h2>
-        <div className="flex mt-2 overflow-x-auto">
+        <div
+          className={`flex mt-2 overflow-x-auto ${gameStyle['game-assets']}`}
+        >
           {game.artworks.map((art, i) => (
             <img
               key={art}
@@ -66,7 +68,9 @@ const GameItemView = ({ game }: { game: GameItemProp }) => {
           ))}
         </div>
         <h2 className="mt-4 mb-2 font-bold text-xl">Videos</h2>
-        <div className="flex mt-2 overflow-x-auto">
+        <div
+          className={`flex mt-2 overflow-x-auto ${gameStyle['game-assets']}`}
+        >
           {game.videos &&
             game.videos.map((video) => (
               <div key={video.video_id} className="flex flex-col">
@@ -75,7 +79,10 @@ const GameItemView = ({ game }: { game: GameItemProp }) => {
                     {video.name}
                   </h3>
                 </div>
-                <div className="w-96 h-80">
+                <div
+                  className="py-2 px-1 bg-slate-500"
+                  style={{ width: 16 * 32, height: 9 * 32 }}
+                >
                   <iframe
                     className="w-full h-full"
                     src={`https://www.youtube-nocookie.com/embed/${video.video_id}`}
