@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: nwleegame.com
+Token: 65643c344be9af796e066852c83ebb30bb3f3cb9f81a07ac2d39d4dc3ac69264
